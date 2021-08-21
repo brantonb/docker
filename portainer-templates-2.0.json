@@ -3,6 +3,36 @@
   "templates": [
     {
       "type": 3,
+      "title": "Duck DNS",
+      "description": "Free dynamic DNS hosted on AWS",
+      "categories": [
+        "networking"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/brantonb/docker",
+        "stackfile": "duckdns/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "SUBDOMAINS",
+          "label": "Subdomains",
+          "description": "Comma-separated list of subdomains to update."
+        },
+        {
+          "name": "TOKEN",
+          "label": "Token",
+          "description": "Obtained from account page on duckdns.org"
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone",
+          "default": "America/Los_Angeles"
+        }
+      ]
+    },
+    {
+      "type": 3,
       "title": "Gollum",
       "description": "A git-based Wiki",
       "categories": [
