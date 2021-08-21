@@ -1,0 +1,18 @@
+version: '2.4'
+
+services:
+  backup:
+    image: awlnx/samba-timemachine
+    ports:
+      - 10445:445
+    environment:
+      USER:
+      PASS:
+      SHARENAME:
+      TMSIZE:
+    volumes:
+      - timemachine_data:/backups
+    restart: unless-stopped
+
+volumes:
+  timemachine_data:

@@ -64,6 +64,40 @@
           "description": "Password for admin portal"
         }
       ]
+    },
+    {
+      "type": 3,
+      "title": "Time Machine",
+      "description": "Backup target for macOS machines",
+      "categories": [
+        "backup"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/brantonb/docker",
+        "stackfile": "timemachine/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "USER",
+          "label": "Network share username",
+          "default": "timemachine"
+        },
+        {
+          "name": "PASS",
+          "label": "Network share password"
+        },
+        {
+          "name": "SHARENAME",
+          "label": "Share name",
+          "default": "TimeMachine"
+        },
+        {
+          "name": "TMSIZE",
+          "label": "Per-machine quota",
+          "description": "Size in MB"
+        }
+      ]
     }
   ]
 }
