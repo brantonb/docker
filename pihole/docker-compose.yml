@@ -9,7 +9,7 @@ services:
       - 8017:80/tcp
     environment:
       TZ: America/Los_Angeles
-      WEBPASSWORD: ${WEBPASSWORD}
+      WEBPASSWORD: ""
       TEMPERATUREUNIT: f
       PIHOLE_DNS_: 1.1.1.1;1.0.0.1
     volumes:
