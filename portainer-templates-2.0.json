@@ -1,0 +1,26 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 3,
+      "title": "Pi-hole",
+      "description": "Network-wide Ad blocking",
+      "categories": [
+        "ad blocking",
+        "networking"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/brantonb/docker",
+        "stackfile": "pihole/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "WEBPASSWORD",
+          "label": "Admin Password",
+          "description": "Password for admin portal"
+        }
+      ]
+    }
+  ]
+}

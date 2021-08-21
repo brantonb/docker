@@ -1,0 +1,22 @@
+version: '2.4'
+
+services:
+  app:
+    image: pihole/pihole:beta-v5.9
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 8017:80/tcp
+    environment:
+      TZ: America/Los_Angeles
+      WEBPASSWORD: ${WEBPASSWORD}
+      TEMPERATUREUNIT: f
+      PIHOLE_DNS_: 1.1.1.1;1.0.0.1
+    volumes:
+      - pihole_data:/etc/pihole/
+      - pihole_dnsmasq:/etc/dnsmasq.d/
+    restart: unless-stopped
+
+volumes:
+  pihole_data:
+  pihole_dnsmasq:
