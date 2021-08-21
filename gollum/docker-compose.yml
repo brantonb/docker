@@ -1,0 +1,13 @@
+version: '2.4'
+
+services:
+  web:
+    build: .
+    ports:
+      - 80:4567
+    restart: unless-stopped
+    volumes:
+      - gollum_wiki:/wiki
+
+volumes:
+  gollum_wiki:

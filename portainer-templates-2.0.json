@@ -3,6 +3,19 @@
   "templates": [
     {
       "type": 3,
+      "title": "Gollum",
+      "description": "A git-based Wiki",
+      "categories": [
+        "wiki"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/brantonb/docker",
+        "stackfile": "gollum/docker-compose.yml"
+      }
+    },
+    {
+      "type": 3,
       "title": "Pi-hole",
       "description": "Network-wide Ad blocking",
       "categories": [
