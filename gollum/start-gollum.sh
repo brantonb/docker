@@ -5,4 +5,4 @@ if [ ! -d .git ]; then
     git init
 fi
 
-gollum --mathjax
+gollum --mathjax --config /opt/gollum/config.rb

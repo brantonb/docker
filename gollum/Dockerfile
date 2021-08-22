@@ -13,4 +13,3 @@ WORKDIR /wiki
 
 COPY start-gollum.sh /start-gollum.sh
 ENTRYPOINT ["/start-gollum.sh"]
-CMD ["--config", "/opt/gollum/config.rb"]
