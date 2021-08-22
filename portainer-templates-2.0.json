@@ -62,6 +62,30 @@
           "name": "WEBPASSWORD",
           "label": "Admin Password",
           "description": "Password for admin portal"
+        },
+        {
+          "name": "TZ",
+          "label": "Time zone",
+          "default": "America/Los_Angeles"
+        },
+        {
+          "name": "TEMPERATUREUNIT",
+          "label": "Temperature Unit",
+          "select": [
+            {
+              "text": "Farenheight",
+              "value": "f",
+              "default": true
+            },
+            {
+              "text": "Celcius",
+              "value": "c"
+            },
+            {
+              "text": "Kelvin",
+              "value": "k"
+            }
+          ]
         }
       ]
     },
