@@ -22,7 +22,7 @@
         {
           "name": "TOKEN",
           "label": "Token",
-          "description": "Obtained from account page on duckdns.org"
+          "description": "Obtained from account page on duckdns.org."
         },
         {
           "name": "TZ",
@@ -61,7 +61,7 @@
         {
           "name": "WEBPASSWORD",
           "label": "Admin Password",
-          "description": "Password for admin portal"
+          "description": "Password for admin portal."
         },
         {
           "name": "TZ",
@@ -119,7 +119,42 @@
         {
           "name": "TMSIZE",
           "label": "Per-machine quota",
-          "description": "Size in MB"
+          "description": "Size in MB."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Wireguard",
+      "description": "Fast, modern, secure VPN tunnel",
+      "categories": [
+        "networking",
+        "vpn"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/brantonb/docker",
+        "stackfile": "wireguard/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "SERVERURL",
+          "label": "Server URL"
+        },
+        {
+          "name": "PEERS",
+          "label": "Peers",
+          "description": "Either a number or a comma-separated list of peer names."
+        },
+        {
+          "name": "LAN_CIDR",
+          "label": "LAN CIDR",
+          "description": "For split tunneling, the CIDR of your local network."
+        },
+        {
+          "name": "TZ",
+          "label": "Time zone",
+          "default": "America/Los_Angeles"
         }
       ]
     }
