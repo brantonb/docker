@@ -25,8 +25,8 @@ services:
       TEMPERATUREUNIT: f
       PIHOLE_DNS_: 10.2.0.2;10.2.0.2
     volumes:
-      - pihole_data:/etc/pihole/
-      - pihole_dnsmasq:/etc/dnsmasq.d/
+      - data:/etc/pihole/
+      - dnsmasq:/etc/dnsmasq.d/
     restart: unless-stopped
     networks:
       internal:
@@ -39,5 +39,7 @@ networks:
         - subnet: 10.2.0.0/29
 
 volumes:
-  pihole_data:
-  pihole_dnsmasq:
+  data:
+    driver: local
+  dnsmasq:
+    driver: local
