@@ -1,21 +1,42 @@
-version: '2.4'
+version: '2'
 
 services:
-  app:
+  dns:
+    image: mvance/unbound-rpi:latest
+    networks:
+      internal:
+        ipv4_address: 10.2.0.2
+    restart: unless-stopped
+
+  ad_blocker:
     image: pihole/pihole:beta-v5.9
+    depends_on:
+      - dns
     ports:
       - 53:53/tcp
       - 53:53/udp
       - 8017:80/tcp
+    dns:
+      - 127.0.0.1
+      - 10.2.0.2
     environment:
       TZ: America/Los_Angeles
       WEBPASSWORD: ""
       TEMPERATUREUNIT: f
-      PIHOLE_DNS_: 1.1.1.1;1.0.0.1
+      PIHOLE_DNS_: 10.2.0.2;10.2.0.2
     volumes:
       - pihole_data:/etc/pihole/
       - pihole_dnsmasq:/etc/dnsmasq.d/
     restart: unless-stopped
+    networks:
+      internal:
+
+networks:
+  internal:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.2.0.0/29
 
 volumes:
   pihole_data:
