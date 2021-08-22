@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
 
   ad_blocker:
-    image: pihole/pihole:beta-v5.9
+    image: pihole/pihole:latest
     depends_on:
       - dns
     ports:
