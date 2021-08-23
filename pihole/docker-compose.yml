@@ -3,6 +3,8 @@ version: '2'
 services:
   dns:
     image: mvance/unbound-rpi:latest
+    volumes:
+      - ${UNBOUND_CONFIG_DIR}/a-records.conf:/opt/unbound/etc/unbound/a-records.conf:ro
     networks:
       internal:
         ipv4_address: 10.2.0.2
@@ -15,7 +17,8 @@ services:
     ports:
       - 53:53/tcp
       - 53:53/udp
-      - 8017:80/tcp
+    expose:
+      - 80
     dns:
       - 127.0.0.1
       - 10.2.0.2
@@ -24,12 +27,14 @@ services:
       WEBPASSWORD: ""
       TEMPERATUREUNIT: f
       PIHOLE_DNS_: 10.2.0.2;10.2.0.2
+      VIRTUAL_HOST:
     volumes:
       - data:/etc/pihole/
       - dnsmasq:/etc/dnsmasq.d/
     restart: unless-stopped
     networks:
       internal:
+      proxy-tier:
 
 networks:
   internal:
@@ -37,6 +42,9 @@ networks:
       driver: default
       config:
         - subnet: 10.2.0.0/29
+  proxy-tier:
+    external:
+      name: nginx-proxy
 
 volumes:
   data:

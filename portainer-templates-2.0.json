@@ -42,6 +42,26 @@
       "repository": {
         "url": "https://github.com/brantonb/docker",
         "stackfile": "gollum/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "VIRTUAL_HOST",
+          "label": "Virtual Host",
+          "description": "The host name used by Nginx Proxy."
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Nginx Proxy",
+      "description": "Automated nginx proxy for Docker containers using docker-gen",
+      "categories": [
+        "networking"
+      ],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/brantonb/docker",
+        "stackfile": "nginx-proxy/docker-compose.yml"
       }
     },
     {
@@ -86,6 +106,16 @@
               "value": "k"
             }
           ]
+        },
+        {
+          "name": "VIRTUAL_HOST",
+          "label": "Virtual Host",
+          "description": "The host name used by Nginx Proxy."
+        },
+        {
+          "name": "UNBOUND_CONFIG_DIR",
+          "label": "Unbound config dir",
+          "description": "The directory on the server with a-records.conf"
         }
       ]
     },

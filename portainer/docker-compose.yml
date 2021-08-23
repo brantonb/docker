@@ -1,0 +1,25 @@
+version: "2"
+
+services:
+  app:
+    image: portainer/portainer-ce
+    expose:
+      - 9000
+    environment:
+      VIRTUAL_HOST:
+      VIRTUAL_PORT: 9000 # Documentation says that if you only expose one port, it's used. Without this, nginx-proxy is using port 80.
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - proxy-tier
+    restart: unless-stopped
+
+volumes:
+  data:
+    driver: local
+
+networks:
+  proxy-tier:
+    external:
+      name: nginx-proxy
