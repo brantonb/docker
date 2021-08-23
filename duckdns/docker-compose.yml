@@ -8,3 +8,4 @@ services:
       TOKEN:
       TZ: America/Los_Angeles
       LOG_FILE: "false"
+    restart: unless-stopped

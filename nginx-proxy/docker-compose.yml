@@ -12,6 +12,7 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       - proxy-tier
+    restart: unless-stopped
 
 networks:
   proxy-tier:
