@@ -62,7 +62,13 @@
       "repository": {
         "url": "https://github.com/brantonb/docker",
         "stackfile": "nginx-proxy/docker-compose.yml"
-      }
+      },
+      "env": [
+          {
+              "name": "VHOST_CONFIG_DIR",
+              "label": "Virtual hosts configuration directory"
+          }
+      ]
     },
     {
       "type": 3,
