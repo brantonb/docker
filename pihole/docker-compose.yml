@@ -4,7 +4,7 @@ services:
   dns:
     image: mvance/unbound-rpi:latest
     volumes:
-      - ${UNBOUND_CONFIG_DIR}/a-records.conf:/opt/unbound/etc/unbound/a-records.conf:ro
+      - ./a-records.conf:/opt/unbound/etc/unbound/a-records.conf:ro
     networks:
       internal:
         ipv4_address: 10.2.0.2
@@ -27,7 +27,7 @@ services:
       WEBPASSWORD: ""
       TEMPERATUREUNIT: f
       PIHOLE_DNS_: 10.2.0.2;10.2.0.2
-      VIRTUAL_HOST:
+      VIRTUAL_HOST: pihole.bb
     volumes:
       - data:/etc/pihole/
       - dnsmasq:/etc/dnsmasq.d/

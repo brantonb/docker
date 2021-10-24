@@ -5,11 +5,11 @@ services:
     build: .
     restart: unless-stopped
     volumes:
-      - gollum_wiki:/wiki
+      - wiki:/wiki
     expose:
       - 4567
     environment:
-      VIRTUAL_HOST:
+      VIRTUAL_HOST: wiki.bb
     networks:
       - proxy-tier
 

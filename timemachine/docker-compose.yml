@@ -6,13 +6,13 @@ services:
     ports:
       - 10445:445
     environment:
-      USER:
-      PASS:
-      SHARENAME:
-      TMSIZE:
+      USER: ${TIMEMACHINE_USER}
+      PASS: ${TIMEMACHINE_PASSWORD}
+      SHARENAME: ${TIMEMACHINE_SHARENAME}
+      TMSIZE: ${TIMEMACHINE_SIZE}
     volumes:
-      - timemachine_data:/backups
+      - data:/backups
     restart: unless-stopped
 
 volumes:
-  timemachine_data:
+  data:

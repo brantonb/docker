@@ -8,12 +8,12 @@ services:
       - SYS_MODULE
     environment:
       TZ: America/Los_Angeles
-      SERVERURL:
+      SERVERURL: ${WIREGUARD_URL}
       SERVERPORT: 51820
-      PEERS:
+      PEERS: ${WIREGUARD_PEERS}
       PEERDNS: auto
       INTERNAL_SUBNET: 10.13.13.0
-      ALLOWEDIPS: 10.13.13.0/24,${LAN_CIDR}
+      ALLOWEDIPS: 10.13.13.0/24,${WIREGUARD_LAN_CIDR}
     volumes:
       - config:/config
     ports:

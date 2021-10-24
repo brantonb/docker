@@ -10,7 +10,7 @@ services:
       HSTS: 'off'
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ${VHOST_CONFIG_DIR}:/etc/nginx/vhost.d:ro
+      - ./vhost:/etc/nginx/vhost.d:ro
     networks:
       - proxy-tier
     restart: unless-stopped

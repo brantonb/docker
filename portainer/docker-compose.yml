@@ -6,8 +6,8 @@ services:
     expose:
       - 9000
     environment:
-      VIRTUAL_HOST:
-      VIRTUAL_PORT: 9000 # Documentation says that if you only expose one port, it's used. Without this, nginx-proxy is using port 80.
+      VIRTUAL_HOST: portainer.bb
+      VIRTUAL_PORT: 9000
     volumes:
       - data:/data
       - /var/run/docker.sock:/var/run/docker.sock

@@ -4,8 +4,8 @@ services:
   updater:
     image: ghcr.io/linuxserver/duckdns
     environment:
-      SUBDOMAINS:
-      TOKEN:
+      SUBDOMAINS: ${DUCKDNS_SUBDOMAINS}
+      TOKEN: ${DUCKDNS_TOKEN}
       TZ: America/Los_Angeles
       LOG_FILE: "false"
     restart: unless-stopped
