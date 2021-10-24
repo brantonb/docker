@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  homer:
+    image: b4bz/homer:latest
+    volumes:
+      - ./config.yml:/www/assets/config.yml
+    expose:
+      - 8080
+    environment:
+      VIRTUAL_HOST: home.bb
+    networks:
+      - proxy-tier
+    restart: unless-stopped
+
+networks:
+  proxy-tier:
+    external:
+      name: nginx-proxy

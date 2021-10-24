@@ -1,0 +1,15 @@
+title: "App Dashboard"
+subtitle: "Homer"
+
+columns: "auto"
+connectivityCheck: true
+
+theme: default
+
+services:
+  - items:
+    - name: "Pi-hole"
+      url: "http://pihole.bb/admin"
+      type: "PiHole"
+    - name: "Portainer"
+      url: "http://portainer.bb"
