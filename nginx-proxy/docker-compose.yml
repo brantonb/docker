@@ -6,7 +6,7 @@ services:
     ports:
       - 80:80
     environment:
-      HTTPS_MTEHOD: nohttps
+      HTTPS_METHOD: nohttps
       HSTS: 'off'
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
